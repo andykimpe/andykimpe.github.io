@@ -1,1 +1,1 @@
-coucou ici c'est README.md
+<meta http-equiv="refresh" content="durée;URL=https://andykimpe.github.io/index.html"> 
