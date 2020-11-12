@@ -5,17 +5,18 @@
 		releases = document.querySelector('select[name=releases]'),
 		list = document.querySelector('textarea[name=list]'),
 		src = document.querySelector('input[name=src]'),
-		contrib = document.querySelector('input[name=contrib]'),
-		nonfree = document.querySelector('input[name=non-free]'),
-		security = document.querySelector('input[name=security]');
+		contrib = document.querySelector('input[name=restricted]'),
+		nonfree = document.querySelector('input[name=multiverse]'),
+		security = document.querySelector('input[name=universe]');
 
 	var sourceList = [];
 
 	var getComponents = function() {
 		var components = ['main'];
 
-		if(contrib.checked) components.push('contrib');
-		if(nonfree.checked) components.push('non-free');
+		if(restricted.checked) components.push('restricted');
+		if(universe.checked) components.push('universe');
+		if(multiverse.checked) components.push('multiverse');
 
 		return components.join(' ');
 	};
@@ -43,12 +44,6 @@
 			appendSource(['']);
 			appendSource(['deb', arch, ftp, rel + '-updates', comps]);
 			if(src.checked) appendSource(['deb-src', arch, ftp, rel + '-updates', comps]);
-		}
-
-		if(security.checked) {
-			appendSource(['']);
-			appendSource(['deb', arch, 'http://security.debian.org/', rel + '/updates', comps]);
-			if(src.checked) appendSource(['deb-src', arch, 'http://security.debian.org/', rel + '/updates', comps]);
 		}
 
 		list.value = sourceList.join("\n");
