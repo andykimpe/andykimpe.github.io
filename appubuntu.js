@@ -5,8 +5,9 @@
 		releases = document.querySelector('select[name=releases]'),
 		list = document.querySelector('textarea[name=list]'),
 		src = document.querySelector('input[name=src]'),
-		contrib = document.querySelector('input[name=restricted'),
-		nonfree = document.querySelector('input[name=universe'),
+		restricted = document.querySelector('input[name=restricted'),
+		universe = document.querySelector('input[name=universe'),
+		multiverse = document.querySelector('input[name=multiverse'),
 		security = document.querySelector('input[name=security]');
 
 	var sourceList = [];
@@ -14,9 +15,9 @@
 	var getComponents = function() {
 		var components = ['main'];
 
-		if(contrib.checked) components.push('restricted');
-		if(nonfree.checked) components.push('universe');
-		if(non-free-firmware.checked) components.push('non-free-firmware');
+		if(restricted.checked) components.push('restricted');
+		if(multiverse.checked) components.push('universe');
+		if(multiverse.checked) components.push('multiverse');
 
 		return components.join(' ');
 	};
