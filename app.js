@@ -16,6 +16,7 @@
 
 		if(contrib.checked) components.push('contrib');
 		if(nonfree.checked) components.push('non-free');
+		if(non-free-firmware.checked) components.push('non-free-firmware');
 
 		return components.join(' ');
 	};
