@@ -7,6 +7,7 @@
 		src = document.querySelector('input[name=src]'),
 		contrib = document.querySelector('input[name=contrib]'),
 		nonfree = document.querySelector('input[name=non-free]'),
+		non-free-firmware = document.querySelector('input[name=non-free-firmware]'),
 		security = document.querySelector('input[name=security]');
 
 	var sourceList = [];
@@ -16,6 +17,7 @@
 
 		if(contrib.checked) components.push('contrib');
 		if(nonfree.checked) components.push('non-free');
+		if(non-free-firmware.checked) components.push('non-free-firmware');
 
 		return components.join(' ');
 	};
