@@ -5,7 +5,7 @@
 		releases = document.querySelector('select[name=releases]'),
 		list = document.querySelector('textarea[name=list]'),
 		src = document.querySelector('input[name=src]'),
-		contrib = document.querySelector('input[name=contrib]'),
+		contrib = document.querySelector('input[name=restricted'),
 		nonfree = document.querySelector('input[name=non-free]'),
 		security = document.querySelector('input[name=security]');
 
@@ -14,7 +14,7 @@
 	var getComponents = function() {
 		var components = ['main'];
 
-		if(contrib.checked) components.push('contrib');
+		if(contrib.checked) components.push('restricted');
 		if(nonfree.checked) components.push('non-free');
 		if(non-free-firmware.checked) components.push('non-free-firmware');
 
