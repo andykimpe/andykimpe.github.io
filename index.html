@@ -1,122 +1,130 @@
 <!doctype html>
-<html lang="en" class="h-100">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.0.1">
-    <title>andykimpe.github.io</title>
-    <link rel="alternate" hreflang="fr" href="https://andykimpe.github.io/fr/index.html" />
-    <link rel="alternate" hreflang="en" href="https://andykimpe.github.io/en/index.htmll" />
-    <div id="google_translate_element"></div>
-      <!--<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>-->
-      <script type="text/javascript" src="https://andykimpe.github.io/js/translate.js"></script>
-      <script type="text/javascript">
-      function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-      }
-      </script>
-    </div>
-    
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer-navbar/">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Sources List Generator for Debian</title>
+		<meta name="description" content="Sources List Generator for official Debian repositories">
+		<meta name="keywords" content="Debian, Server, Repository, Generator, Sources, Sources List, deb, deb-src, Linux, distro, distribution">
+		<meta name="robots" content="noodp,noydir">
+		<meta name="google-site-verification" content="M1qySTPCp0tj73JiCP1yjJKSwVwGIDoqCd8385lwdl0">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<main>
+			<div class="wrap--header">
+				<div class="wrap">
+					<h2 class="header">Debian Sources List Generator</h2>
 
-    <!-- Bootstrap core CSS -->
-<link href="https://getbootstrap.com/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+					<div class="fixed--right">							
+						<iframe src="https://ghbtns.com/github-btn.html?user=debgen&repo=debgen.github.io&type=fork&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="wrap">
+				<div class="elemnts--inline">
+					<p><label>Mirror<br>
+					<select name="mirror">
+						<option value="http://ftp.at.debian.org/debian/">Austria</option>
+						<option value="http://ftp.au.debian.org/debian/">Australia</option>
+						<option value="http://ftp.be.debian.org/debian/">Belgium</option>
+						<option value="http://ftp.bg.debian.org/debian/">Bulgaria</option>
+						<option value="http://ftp.br.debian.org/debian/">Brazil</option>
+						<option value="http://ftp.by.debian.org/debian/">Belarus</option>
+						<option value="http://ftp.ca.debian.org/debian/">Canada</option>
+						<option value="http://ftp.ch.debian.org/debian/">Switzerland</option>
+						<option value="http://ftp.cn.debian.org/debian/">China</option>
+						<option value="http://ftp.cz.debian.org/debian/">Czech Republic</option>
+						<option value="http://deb.debian.org/debian/">Debian Official Repo</option>
+						<option value="http://ftp.de.debian.org/debian/">Germany</option>
+						<option value="http://ftp.dk.debian.org/debian/">Denmark</option>
+						<option value="http://ftp.ee.debian.org/debian/">Estonia</option>
+						<option value="http://ftp.es.debian.org/debian/">Spain</option>
+						<option value="http://cdn-fastly.deb.debian.org/debian/" selected>Fastest CDN</option>
+						<option value="http://ftp.fi.debian.org/debian/">Finland</option>
+						<option value="http://ftp.fr.debian.org/debian/">France</option>
+						<option value="http://ftp.fr.debian.org/debian/">France</option>
+						<option value="http://ftp.uk.debian.org/debian/">United Kingdom</option>
+						<option value="http://ftp.gr.debian.org/debian/">Greece</option>
+						<option value="http://ftp.hr.debian.org/debian/">Croatia</option>
+						<option value="http://ftp.hu.debian.org/debian/">Hungary</option>
+						<option value="http://ftp.ie.debian.org/debian/">Ireland</option>
+						<option value="http://ftp.is.debian.org/debian/">Iceland</option>
+						<option value="http://kambing.ui.ac.id/debian/">Indonesia (KambingUI Mirror)</option>
+						<option value="http://ftp.it.debian.org/debian/">Italy</option>
+						<option value="http://ftp.jp.debian.org/debian/">Japan</option>
+						<option value="http://ftp.kr.debian.org/debian/">Korea, Republic of</option>
+						<option value="http://ftp.lt.debian.org/debian/">Lithuania</option>
+						<option value="http://ftp.md.debian.org/debian/">Moldova</option>
+						<option value="http://ftp.mx.debian.org/debian/">Mexico</option>
+						<option value="http://ftp.nc.debian.org/debian/">New Caledonia</option>
+						<option value="http://ftp.nl.debian.org/debian/">Netherlands</option>
+						<option value="http://ftp.no.debian.org/debian/">Norway</option>
+						<option value="http://ftp.nz.debian.org/debian/">New Zealand</option>
+						<option value="http://ftp.pl.debian.org/debian/">Poland</option>
+						<option value="http://ftp.pt.debian.org/debian/">Portugal</option>
+						<option value="http://ftp.ro.debian.org/debian/">Romania</option>
+						<option value="http://ftp.ru.debian.org/debian/">Russian Federation</option>
+						<option value="http://ftp.se.debian.org/debian/">Sweden</option>
+						<option value="http://ftp.sg.debian.org/debian/">Singapore</option>
+						<option value="http://ftp.si.debian.org/debian/">Slovenia</option>
+						<option value="http://ftp.sk.debian.org/debian/">Slovakia</option>
+						<option value="http://ftp.sv.debian.org/debian/">El Salvador</option>
+						<option value="http://ftp.th.debian.org/debian/">Thailand</option>
+						<option value="http://ftp.tr.debian.org/debian/">Turkey</option>
+						<option value="http://ftp.tw.debian.org/debian/">Taiwan</option>
+						<option value="http://ftp.ua.debian.org/debian/">Ukraine</option>
+						<option value="http://ftp.us.debian.org/debian/">United States</option>
+					</select></label></p>
 
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-<link rel="icon" href="https://getbootstrap.com/docs/4.5/assets/img/favicons/favicon.ico">
-<meta name="msapplication-config" content="https://getbootstrap.com/docs/4.5/assets/img/favicons/browserconfig.xml">
-<meta name="theme-color" content="#563d7c">
+					<p><label>Releases<br>
+					<select name="releases">
+						<option value="stable" data-updates>Stable</option>
+						<option value="testing" data-updates>Testing</option>
+						<option value="bullseye" data-updates>Testing (bullseye)</option>
+						<option value="buster" data-updates selected>Debian 10 (buster)</option>
+						<option value="stretch" data-updates>Debian 9 (stretch)</option>
+						<option value="jessie" data-updates>Debian 8 (jessie)</option>
+						<option value="wheezy" data-updates>Debian 7 (wheezy) </option>
+						<option value="squeeze-lts">Debian 6.0 (squeeze) </option>
+					</select></label></p>
 
+					<p><label>Arch<br>
+					<select name="arch">
+						<option selected></option>
+						<option>all</option>
+						<option>amd64</option>
+						<option>arm64</option>
+						<option>armel</option>
+						<option>armhf</option>
+						<option>hurd-i386</option>
+						<option>i386</option>
+						<option>ia64</option>
+						<option>kfreebsd-amd64</option>
+						<option>kfreebsd-i386</option>
+						<option>mips</option>
+						<option>mipsel</option>
+						<option>powerpc</option>
+						<option>ppc64el</option>
+						<option>s390</option>
+						<option>s390x</option>
+						<option>sparc</option>
+					</select></label></p>
+				</div>
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
+				<p><label><input name="src" type="checkbox" checked> Include source</label><br>
+					<label><input name="contrib" type="checkbox" checked> Contrib</label><br>
+					<label><input name="non-free" type="checkbox" checked> Non-Free</label><br>
+					<label><input name="security" type="checkbox" checked> Security</label></p>
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="https://andykimpe.github.io/sticky-footer-navbar.css" rel="stylesheet">
-  </head>
-  <body class="d-flex flex-column h-100">
-    <header>
-  <!-- Fixed navbar -->
-<div id="navbar-main">
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-dark fixed-top bg-dark">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon icon-heart" style="font-size:30px; color:#3498db;">andykimpe.github.io</span></button>
-            <a class="navbar-brand hidden-xs hidden-sm" href="#home"><span class="icon icon-heart" style="font-size:18px; color:#3498db;"></span></a>
-        </div>
-        <div class="navbar-collapse collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="https://andykimpe.github.io/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://andykimpe.github.io/test.html">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
+				<p><label>Source List<br>
+				<textarea autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="list" rows="10" cols="100"></textarea></label></p>
+				<p><button class="button">Make it so!</button></p>
+			</div>
+		</main>
 
-        <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Language <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="https://andykimpe.github.io/en/index.html">English</a></li>
-                    <li><a href="https://andykimpe.github.io/fr/index.html">Frech</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider">
-                    <li><a href="#">Separated link</a></li>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
-  </nav>
-</header>
-
-<!-- Begin page content -->
-<main role="main" class="flex-shrink-0">
-  <div class="container">
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    <center><h1 class="mt-5">Andykimpe</h1></center>
-    <p>select language.</p>
-    <p><a href="https://andykimpe.github.io/en/index.html">English</p>
-    <p><a href="https://andykimpe.github.io/fr/index.html">French (Fran&ccedil;ais)</p>
-  </div>
-</main>
-
-<footer class="footer mt-auto py-3">
-  <div class="container">
-    <span class="text-muted">Place sticky footer content here.</span>
-  </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="https://getbootstrap.com/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="https://getbootstrap.com/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script></body>
+		<script src="app.js"></script>
+	</body>
 </html>
