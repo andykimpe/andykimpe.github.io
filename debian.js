@@ -31,9 +31,6 @@
 	var appendSource = function(source) {
 		sourceList.push(source.filter(function(element) { return element.length; }).join(' '));
 	};
-	var appendGpf = function(source) {
-		gpgList.push(source.filter(function(element) { return element.length; }).join(' '));
-	};
 
 	var generate = function() {
 		var ftp = mirror.options[mirror.selectedIndex].value,
@@ -56,12 +53,9 @@
 			appendSource(['deb', arch, 'http://security.debian.org/', rel + '-security', comps]);
 			if(src.checked) appendSource(['deb-src', arch, 'http://security.debian.org/', rel + '-security', comps]);
 		}
-		appendGpf(['gpg', 'gpg1', 'gpg2', 'gpg3', 'gpg4']);
 
 		list.value = sourceList.join("\n");
 		sourceList = [];
-		list2.value = gpgList.join("\n");
-		gpgList = [];
 	};
 
 	button.addEventListener('click', generate, false);
