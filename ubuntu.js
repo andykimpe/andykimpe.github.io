@@ -9,6 +9,7 @@
 		universe = document.querySelector('input[name=universe]'),
 		multiverse = document.querySelector('input[name=multiverse]'),
 		firefox = document.querySelector('input[name=firefox]'),
+		apache2 = document.querySelector('input[name=apache2]'),
 		security = document.querySelector('input[name=security]');
 
 	var sourceList = [];
@@ -71,6 +72,13 @@
 			appendSource(['Pin: origin packages.mozilla.org']);
 			appendSource(['Pin-Priority: 1000']);
 			appendSource(['" | sudo tee /etc/apt/preferences.d/mozilla']);
+			appendSource(['sudo apt-get update']);
+			appendSource(['sudo apt-get -y install firefox']);
+		}
+
+		if(apache2.checked) {
+			appendSource(['sudo add-apt-repository ppa:ondrej/apache2 -y']);
+			appendSource(['sudo apt update']);
 		}
 
 		list.value = sourceList.join("\n");
