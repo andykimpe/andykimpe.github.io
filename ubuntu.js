@@ -57,7 +57,7 @@
 		}
 
 		appendSource(['sudo apt-get update']);
-		appendSource(['sudo apt-get install curl wget apt-transport-https dirmngr -y']);
+		appendSource(['sudo apt-get install curl wget apt-transport-https dirmngr ca-certificates software-properties-common -y']);
 
 		if(firefox.checked) {
 			appendSource(['mkdir -p ~/.mozilla/firefox/ && cp -a ~/snap/firefox/common/.mozilla/firefox/* ~/.mozilla/firefox/']);
