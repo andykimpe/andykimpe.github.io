@@ -9,6 +9,7 @@
 		nonfree = document.querySelector('input[name=non-free]'),
 		nonfreefirmware = document.querySelector('input[name=non-free-firmware]'),
 		firefox = document.querySelector('input[name=firefox]'),
+		apache2 = document.querySelector('input[name=apache2]'),
 		security = document.querySelector('input[name=security]');
 
 	var sourceList = [];
@@ -82,6 +83,15 @@
 			appendSource(['Pin: origin packages.mozilla.org']);
 			appendSource(['Pin-Priority: 1000']);
 			appendSource(['" | sudo tee /etc/apt/preferences.d/mozilla']);
+			appendSource(['sudo apt-get update']);
+			appendSource(['sudo apt-get -y install firefox']);
+		}
+
+		if(apache2.checked) {
+			appendSource(['sudo install -d -m 0755 /etc/apt/keyrings']);
+			appendSource(['wget -q https://packages.sury.org/apache2/apt.gpg -O- | sudo tee /etc/apt/keyrings/apache2.asc > /dev/null']);
+			appendSource(['echo "deb [signed-by=/etc/apt/keyrings/apache2.asc]', arch, 'https://packages.mozilla.org/apt', rel, 'main', '" | sudo tee -a /etc/apt/sources.list.d/apache2.list > /dev/null']);
+			appendSource(['sudo apt update']);
 		}
 
 		list.value = sourceList.join("\n");
