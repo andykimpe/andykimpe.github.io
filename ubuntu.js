@@ -42,6 +42,7 @@
 		var arch = getArch();
 
 		appendSource(['sudo rm -f /etc/apt/sources.list']);
+		appendSource(['sudo rm -f /etc/apt/sources.list.d/*.list']);
 		appendSource(['echo "deb', arch, ftpf, rel, comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
 		if(src.checked) appendSource(['echo "deb-src', arch, ftpf, rel, comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
 
