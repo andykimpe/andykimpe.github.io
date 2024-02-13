@@ -1,0 +1,276 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Sources List Generator for Ubuntu</title>
+		<meta name="description" content="Sources List Generator for official Ubuntu repositories">
+		<meta name="keywords" content="Ubuntu, Server, Repository, Generator, Sources, Sources List, deb, deb-src, Linux, distro, distribution">
+		<meta name="robots" content="noodp,noydir">
+		<meta name="google-site-verification" content="M1qySTPCp0tj73JiCP1yjJKSwVwGIDoqCd8385lwdl0">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<main>
+			<div class="wrap--header">
+				<div class="wrap">
+					<h2 class="header"><a href="/ubuntu.html">Ubuntu Sources List Generator</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/debian.html">Debian Sources List Generator</a></h2>
+
+					<div class="fixed--right">							
+						<iframe src="https://ghbtns.com/github-btn.html?user=andykimpe&repo=andykimpe.github.io&type=fork&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="wrap">
+				<div class="elemnts--inline">
+					<p><label>Mirror<br>
+					<select name="mirror">
+						<option value="http://archive.ubuntu.com" selected>Ubuntu Official Repo</option>
+						<option value="http://ubuntu.mirrors.ovh.net">OVH CDN</option>
+						<option value='http://af.archive.ubuntu.com'>Afghanistan</option>
+						<option value='http://al.archive.ubuntu.com'>Albania</option>
+						<option value='http://dz.archive.ubuntu.com'>Algeria</option>
+						<option value='http://ao.archive.ubuntu.com'>Angola</option>
+						<option value='http://ar.archive.ubuntu.com'>Argentina</option>
+						<option value='http://am.archive.ubuntu.com'>Armenia</option>
+						<option value='http://au.archive.ubuntu.com'>Australia</option>
+						<option value='http://at.archive.ubuntu.com'>Austria</option>
+						<option value='http://az.archive.ubuntu.com'>Azerbaj</option>
+						<option value='http://bs.archive.ubuntu.com'>Bahamas</option>
+						<option value='http://bh.archive.ubuntu.com'>Bahrain</option>
+						<option value='http://76.archive.ubuntu.com'>Balikpapan</option>
+						<option value='http://bn.archive.ubuntu.com'>Bangladesh</option>
+						<option value='http://bb.archive.ubuntu.com'>Barbados</option>
+						<option value='http://by.archive.ubuntu.com'>Belarus</option>
+						<option value='http://be.archive.ubuntu.com'>Belgium</option>
+						<option value='http://bz.archive.ubuntu.com'>Belize</option>
+						<option value='http://bj.archive.ubuntu.com'>Benin</option>
+						<option value='http://b5.archive.ubuntu.com'>Betelgeuse Five</option>
+						<option value='http://bu.archive.ubuntu.com'>Bhutan</option>
+						<option value='http://bo.archive.ubuntu.com'>Bolivia</option>
+						<option value='http://ba.archive.ubuntu.com'>Bosnia and Herzegovina</option>
+						<option value='http://bw.archive.ubuntu.com'>Botswana</option>
+						<option value='http://55.archive.ubuntu.com'>Brasil</option>
+						<option value='http://br.archive.ubuntu.com'>Brazil</option>
+						<option value='http://bg.archive.ubuntu.com'>Bulgaria</option>
+						<option value='http://bf.archive.ubuntu.com'>Burkina Fasso</option>
+						<option value='http://bi.archive.ubuntu.com'>Burundi</option>
+						<option value='http://cv.archive.ubuntu.com'>Cabo Verde</option>
+						<option value='http://kh.archive.ubuntu.com'>Cambodia</option>
+						<option value='http://cm.archive.ubuntu.com'>Cameroon</option>
+						<option value='http://ca.archive.ubuntu.com'>Canada</option>
+						<option value='http://td.archive.ubuntu.com'>Chad</option>
+						<option value='http://cl.archive.ubuntu.com'>Chile</option>
+						<option value='http://cn.archive.ubuntu.com'>China</option>
+						<option value='http://co.archive.ubuntu.com'>Colombia</option>
+						<option value='http://cg.archive.ubuntu.com'>Congo</option>
+						<option value='http://cr.archive.ubuntu.com'>Costa Rica</option>
+						<option value='http://ci.archive.ubuntu.com'>Côte d\'Ivoire</option>
+						<option value='http://hr.archive.ubuntu.com'>Croatia</option>
+						<option value='http://cu.archive.ubuntu.com'>Cuba</option>
+						<option value='http://cw.archive.ubuntu.com'>Curaçao</option>
+						<option value='http://cy.archive.ubuntu.com'>Cyprus</option>
+						<option value='http://cz.archive.ubuntu.com'>Czech Republic</option>
+						<option value='http://da.archive.ubuntu.com'>Danmark</option>
+						<option value='http://cd.archive.ubuntu.com'>Democratic Republic of Congo</option>
+						<option value='http://dk.archive.ubuntu.com'>Denmark</option>
+						<option value='http://dj.archive.ubuntu.com'>Djibouti</option>
+						<option value='http://dr.archive.ubuntu.com'>Dominican Republic</option>
+						<option value='http://ec.archive.ubuntu.com'>Ecuador</option>
+						<option value='http://eg.archive.ubuntu.com'>Egypt</option>
+						<option value='http://sv.archive.ubuntu.com'>El Salvador</option>
+						<option value='http://en.archive.ubuntu.com'>England</option>
+						<option value='http://er.archive.ubuntu.com'>Eritrea</option>
+						<option value='http://sp.archive.ubuntu.com'>España</option>
+						<option value='http://ee.archive.ubuntu.com'>Estonia</option>
+						<option value='http://et.archive.ubuntu.com'>Ethiopia</option>
+						<option value='http://fi.archive.ubuntu.com'>Finland</option>
+						<option value='http://fr.archive.ubuntu.com'>France</option>
+						<option value='http://ga.archive.ubuntu.com'>Gabon</option>
+						<option value='http://gm.archive.ubuntu.com'>Gambia</option>
+						<option value='http://ge.archive.ubuntu.com'>Georgia</option>
+						<option value='http://de.archive.ubuntu.com'>Germany</option>
+						<option value='http://gh.archive.ubuntu.com'>Ghana</option>
+						<option value='http://gb.archive.ubuntu.com'>Great britain</option>
+						<option value='http://gr.archive.ubuntu.com'>Greece</option>
+						<option value='http://gd.archive.ubuntu.com'>Grenada</option>
+						<option value='http://gp.archive.ubuntu.com'>Guadeloupe</option>
+						<option value='http://gu.archive.ubuntu.com'>Guam</option>
+						<option value='http://gt.archive.ubuntu.com'>Guatemala</option>
+						<option value='http://ht.archive.ubuntu.com'>Haiti</option>
+						<option value='http://hn.archive.ubuntu.com'>Honduras</option>
+						<option value='http://hk.archive.ubuntu.com'>Hong kong</option>
+						<option value='http://hu.archive.ubuntu.com'>Hungary</option>
+						<option value='http://is.archive.ubuntu.com'>Iceland</option>
+						<option value='http://in.archive.ubuntu.com'>India</option>
+						<option value='http://id.archive.ubuntu.com'>Indonesia</option>
+						<option value='http://ir.archive.ubuntu.com'>Iran</option>
+						<option value='http://iq.archive.ubuntu.com'>Iraq</option>
+						<option value='http://ie.archive.ubuntu.com'>Ireland</option>
+						<option value='http://im.archive.ubuntu.com'>Isle of Man</option>
+						<option value='http://il.archive.ubuntu.com'>Israel</option>
+						<option value='http://it.archive.ubuntu.com'>Italy</option>
+						<option value='http://ja.archive.ubuntu.com'>Jamaica</option>
+						<option value='http://jp.archive.ubuntu.com'>Japan</option>
+						<option value='http://jo.archive.ubuntu.com'>Jordan</option>
+						<option value='http://kz.archive.ubuntu.com'>Kazakhstan</option>
+						<option value='http://ke.archive.ubuntu.com'>Kenya</option>
+						<option value='http://82.archive.ubuntu.com'>Korea</option>
+						<option value='http://kw.archive.ubuntu.com'>Kuwait</option>
+						<option value='http://kg.archive.ubuntu.com'>Kyrgyzstan</option>
+						<option value='http://lv.archive.ubuntu.com'>Latvia</option>
+						<option value='http://lb.archive.ubuntu.com'>Lebanon</option>
+						<option value='http://ls.archive.ubuntu.com'>Lesotho</option>
+						<option value='http://ly.archive.ubuntu.com'>Libya</option>
+						<option value='http://lt.archive.ubuntu.com'>Lithuania</option>
+						<option value='http://lu.archive.ubuntu.com'>Luxembourg</option>
+						<option value='http://mo.archive.ubuntu.com'>Macau</option>
+						<option value='http://mk.archive.ubuntu.com'>Macedonia</option>
+						<option value='http://mg.archive.ubuntu.com'>Madagascar</option>
+						<option value='http://28.archive.ubuntu.com'>Madrid</option>
+						<option value='http://mw.archive.ubuntu.com'>Malawi</option>
+						<option value='http://my.archive.ubuntu.com'>Malaysia</option>
+						<option value='http://mv.archive.ubuntu.com'>Maldives</option>
+						<option value='http://ml.archive.ubuntu.com'>Mali</option>
+						<option value='http://mt.archive.ubuntu.com'>Malta</option>
+						<option value='http://mq.archive.ubuntu.com'>Martinique</option>
+						<option value='http://mu.archive.ubuntu.com'>Mauritius</option>
+						<option value='http://me.archive.ubuntu.com'>Meland</option>
+						<option value='http://mx.archive.ubuntu.com'>Mexico</option>
+						<option value='http://md.archive.ubuntu.com'>Moldova</option>
+						<option value='http://mn.archive.ubuntu.com'>Mongolia</option>
+						<option value='http://ma.archive.ubuntu.com'>Morocco</option>
+						<option value='http://mz.archive.ubuntu.com'>Mozambique</option>
+						<option value='http://mm.archive.ubuntu.com'>Myanmar</option>
+						<option value='http://na.archive.ubuntu.com'>Namibia</option>
+						<option value='http://np.archive.ubuntu.com'>Nepal</option>
+						<option value='http://nl.archive.ubuntu.com'>Netherlands</option>
+						<option value='http://nc.archive.ubuntu.com'>New Caledonia</option>
+						<option value='http://nz.archive.ubuntu.com'>New Zealand</option>
+						<option value='http://ni.archive.ubuntu.com'>Nicaragua</option>
+						<option value='http://31.archive.ubuntu.com'>Niederlande</option>
+						<option value='http://ne.archive.ubuntu.com'>Niger</option>
+						<option value='http://ng.archive.ubuntu.com'>Nigeria</option>
+						<option value='http://no.archive.ubuntu.com'>Norway</option>
+						<option value='http://om.archive.ubuntu.com'>Oman</option>
+						<option value='http://pk.archive.ubuntu.com'>Pakistan</option>
+						<option value='http://92.archive.ubuntu.com'>Paksitan</option>
+						<option value='http://ps.archive.ubuntu.com'>Palestine</option>
+						<option value='http://pa.archive.ubuntu.com'>Panama</option>
+						<option value='http://pg.archive.ubuntu.com'>Papua new gunia</option>
+						<option value='http://py.archive.ubuntu.com'>Paraguay</option>
+						<option value='http://pe.archive.ubuntu.com'>Peru</option>
+						<option value='http://ph.archive.ubuntu.com'>Philippines</option>
+						<option value='http://pl.archive.ubuntu.com'>Poland</option>
+						<option value='http://pt.archive.ubuntu.com'>Portugal</option>
+						<option value='http://pr.archive.ubuntu.com'>Puerto Rico</option>
+						<option value='http://qa.archive.ubuntu.com'>Qatar</option>
+						<option value='http://q1.archive.ubuntu.com'>Qwerty</option>
+						<option value='http://re.archive.ubuntu.com'>Reunion</option>
+						<option value='http://ro.archive.ubuntu.com'>Romania</option>
+						<option value='http://ru.archive.ubuntu.com'>Russia</option>
+						<option value='http://rw.archive.ubuntu.com'>Rwanda</option>
+						<option value='http://sn.archive.ubuntu.com'>S?n?gal</option>
+						<option value='http://lc.archive.ubuntu.com'>Saint Lucia</option>
+						<option value='http://ws.archive.ubuntu.com'>Samoa</option>
+						<option value='http://sa.archive.ubuntu.com'>Saudi Arabia</option>
+						<option value='http://ka.archive.ubuntu.com'>Scotland</option>
+						<option value='http://rs.archive.ubuntu.com'>Serbia</option>
+						<option value='http://sc.archive.ubuntu.com'>Seychelles</option>
+						<option value='http://sl.archive.ubuntu.com/'>Sierra Leone</option>
+						<option value='http://sg.archive.ubuntu.com'>Singapore</option>
+						<option value='http://sk.archive.ubuntu.com'>Slovakia</option>
+						<option value='http://si.archive.ubuntu.com'>Slovenia</option>
+						<option value='http://za.archive.ubuntu.com'>South Africa</option>
+						<option value='http://kr.archive.ubuntu.com'>South korea</option>
+						<option value='http://ss.archive.ubuntu.com'>South Sudan</option>
+						<option value='http://es.archive.ubuntu.com'>Spain</option>
+						<option value='http://lk.archive.ubuntu.com'>Sri Lanka</option>
+						<option value='http://vc.archive.ubuntu.com'>St. Vincent</option>
+						<option value='http://sd.archive.ubuntu.com'>Sudan</option>
+						<option value='http://sr.archive.ubuntu.com'>Suriname</option>
+						<option value='http://se.archive.ubuntu.com'>Sweden</option>
+						<option value='http://ch.archive.ubuntu.com'>Switzerland</option>
+						<option value='http://sy.archive.ubuntu.com'>Syria</option>
+						<option value='http://tw.archive.ubuntu.com'>Taiwan</option>
+						<option value='http://tj.archive.ubuntu.com'>Tajikistan</option>
+						<option value='http://tz.archive.ubuntu.com'>Tanzania</option>
+						<option value='http://mc.archive.ubuntu.com'>Test My Country</option>
+						<option value='http://tx.archive.ubuntu.com'>Texas</option>
+						<option value='http://th.archive.ubuntu.com'>Thailand</option>
+						<option value='http://tl.archive.ubuntu.com'>Timor-Leste</option>
+						<option value='http://tg.archive.ubuntu.com'>Togo</option>
+						<option value='http://to.archive.ubuntu.com'>Tonga</option>
+						<option value='http://tt.archive.ubuntu.com'>Trinidad & Tobago</option>
+						<option value='http://tn.archive.ubuntu.com'>Tunisia</option>
+						<option value='http://90.archive.ubuntu.com'>Turkei</option>
+						<option value='http://tr.archive.ubuntu.com'>Turkey</option>
+						<option value='http://tm.archive.ubuntu.com'>Turkmenistan</option>
+						<option value='http://ug.archive.ubuntu.com'>Uganda</option>
+						<option value='http://38.archive.ubuntu.com'>Ukraina</option>
+						<option value='http://ua.archive.ubuntu.com'>Ukraine</option>
+						<option value='http://ae.archive.ubuntu.com'>United Arab Emirates</option>
+						<option value='http://uk.archive.ubuntu.com'>United Kingdom</option>
+						<option value='http://us.archive.ubuntu.com'>United States</option>
+						<option value='http://uy.archive.ubuntu.com'>Uruguay</option>
+						<option value='http://01.archive.ubuntu.com'>Usa</option>
+						<option value='http://uz.archive.ubuntu.com'>Uzbekistan</option>
+						<option value='http://ve.archive.ubuntu.com'>Venezuela</option>
+						<option value='http://vi.archive.ubuntu.com'>Viet Nam</option>
+						<option value='http://vn.archive.ubuntu.com'>Vietnam</option>
+						<option value='http://xx.archive.ubuntu.com'>Xx</option>
+						<option value='http://ye.archive.ubuntu.com'>Yemen</option>
+						<option value='http://zm.archive.ubuntu.com'>Zambia</option>
+						<option value='http://zw.archive.ubuntu.com'>Zimbabwe</option>
+					</select></label></p>
+
+					<p><label>Releases<br>
+					<select name="releases">
+						<option value="noble" data-updates>Ubuntu 24.04 LTS (The Noble Numbat)</option>
+						<option value="mantic" data-updates>Ubuntu 23.10 (The Mantic Minotaur)</option>
+						<option value="lunar" data-updates>Ubuntu 23.04 (The Lunar Lobster)</option>
+						<option value="jammy" data-updates selected>Ubuntu 22.04 LTS (The Jammy Jellyfish)</option>
+						<option value="focal" data-updates>Ubuntu 20.04 LTS (The Focal Fossa)</option>
+					</select></label></p>
+
+					<p><label>Arch<br>
+					<select name="arch">
+						<option selected></option>
+						<option>all</option>
+						<option>amd64</option>
+						<option>arm64</option>
+						<option>armel</option>
+						<option>armhf</option>
+						<option>hurd-i386</option>
+						<option>i386</option>
+						<option>ia64</option>
+						<option>kfreebsd-amd64</option>
+						<option>kfreebsd-i386</option>
+						<option>mips</option>
+						<option>mipsel</option>
+						<option>powerpc</option>
+						<option>ppc64el</option>
+						<option>s390</option>
+						<option>s390x</option>
+						<option>sparc</option>
+					</select></label></p>
+				</div>
+
+				<p><label><input name="src" type="checkbox" checked> Include source</label><br>
+					<label><input name="restricted" type="checkbox" checked> Restricted</label><br>
+					<label><input name="universe" type="checkbox" checked> Universe</label><br>
+					<label><input name="multiverse" type="checkbox" checked> Multiverse</label><br>
+					<label><input name="security" type="checkbox" checked> Security</label><br>
+					<label><input name="firefox" type="checkbox"> <a href="https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions" target="_blank">Mozilla Firefox</a></label></p>
+
+				<p><label>Source List<br>
+				<textarea autocomplete="off" autocorrect="off" autocapitalize="off" name="list" rows="25" cols="200"></textarea></label></p>
+				<p><button class="button">Generate</button></p>
+			</div>
+		</main>
+
+		<script src="ubuntu.js"></script>
+	</body>
+</html>
