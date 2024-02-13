@@ -53,8 +53,8 @@
 
 		if(security.checked) {
 			appendSource(['']);
-			appendSource(['deb', arch, 'http://security.debian.org/', rel + '/updates', comps]);
-			if(src.checked) appendSource(['deb-src', arch, 'http://security.debian.org/', rel + '/updates', comps]);
+			appendSource(['deb', arch, 'http://security.debian.org/', rel + '-security', comps]);
+			if(src.checked) appendSource(['deb-src', arch, 'http://security.debian.org/', rel + '-security', comps]);
 		}
 		appendGpf(['gpg', 'gpg1', 'gpg2', 'gpg3', 'gpg4']);
 
