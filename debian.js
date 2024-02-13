@@ -10,6 +10,7 @@
 		nonfreefirmware = document.querySelector('input[name=non-free-firmware]'),
 		firefox = document.querySelector('input[name=firefox]'),
 		apache2 = document.querySelector('input[name=apache2]'),
+		php = document.querySelector('input[name=php]'),
 		security = document.querySelector('input[name=security]');
 
 	var sourceList = [];
@@ -91,8 +92,15 @@
 		if(apache2.checked) {
 			appendSource(['sudo install -d -m 0755 /etc/apt/keyrings']);
 			appendSource(['wget -q https://packages.sury.org/apache2/apt.gpg -O- | sudo tee /etc/apt/keyrings/apache2.asc > /dev/null']);
-			appendSource(['echo "deb [signed-by=/etc/apt/keyrings/apache2.asc]', arch, 'https://packages.mozilla.org/apt', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/apache2.list > /dev/null']);
-			if(src.checked) appendSource(['echo "deb-src [signed-by=/etc/apt/keyrings/apache2.asc]', arch, 'https://packages.mozilla.org/apt', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/apache2.list > /dev/null']);
+			appendSource(['echo "deb [signed-by=/etc/apt/keyrings/apache2.asc]', arch, 'https://packages.sury.org/apache2/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/apache2.list > /dev/null']);
+			if(src.checked) appendSource(['echo "deb-src [signed-by=/etc/apt/keyrings/apache2.asc]', arch, 'https://packages.sury.org/apache2/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/apache2.list > /dev/null']);
+			appendSource(['sudo apt update']);
+		}
+		if(php.checked) {
+			appendSource(['sudo install -d -m 0755 /etc/apt/keyrings']);
+			appendSource(['wget -q https://packages.sury.org/php/apt.gpg -O- | sudo tee /etc/apt/keyrings/php.asc > /dev/null']);
+			appendSource(['echo "deb [signed-by=/etc/apt/keyrings/php.asc]', arch, 'https://packages.sury.org/php/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/php.list > /dev/null']);
+			if(src.checked) appendSource(['echo "deb-src [signed-by=/etc/apt/keyrings/php.asc]', arch, 'https://packages.sury.org/php/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/php.list > /dev/null']);
 			appendSource(['sudo apt update']);
 		}
 
