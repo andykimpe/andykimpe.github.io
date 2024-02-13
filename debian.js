@@ -4,7 +4,6 @@
 		arch = document.querySelector('select[name=arch]'),
 		releases = document.querySelector('select[name=releases]'),
 		list = document.querySelector('textarea[name=list]'),
-		list2 = document.querySelector('textarea[name=list2]'),
 		src = document.querySelector('input[name=src]'),
 		contrib = document.querySelector('input[name=contrib]'),
 		nonfree = document.querySelector('input[name=non-free]'),
