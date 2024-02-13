@@ -12,6 +12,8 @@
 		apache2 = document.querySelector('input[name=apache2]'),
 		php = document.querySelector('input[name=php]'),
 		nginx = document.querySelector('input[name=nginx]'),
+		mariadb = document.querySelector('input[name=mariadb]'),
+		mysql = document.querySelector('input[name=mysql]'),		
 		security = document.querySelector('input[name=security]');
 
 	var sourceList = [];
@@ -105,7 +107,21 @@
 			appendSource(['echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg]', arch, 'http://nginx.org/packages/debian/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/nginx.list > /dev/null']);
 			if(src.checked) appendSource(['echo "deb-src [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg]', arch, 'http://nginx.org/packages/debian/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/nginx.list > /dev/null']);
 		}
+		if(mariadb.checked) {
+			appendSource(['wget -q https://mariadb.org/mariadb_release_signing_key.pgp -O- | sudo tee /etc/apt/keyrings/mariadb-keyring.pgp > /dev/null']);
+			appendSource(['echo "deb [signed-by=/etc/apt/keyrings/mariadb-keyring.pgp]', arch, 'https://mirror.mariadb.org/repo/11.2/debian/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/mariadb.list > /dev/null']);
+			if(src.checked) appendSource(['echo "deb-src [signed-by=/etc/apt/keyrings/mariadb-keyring.pgp]', arch, 'https://mirror.mariadb.org/repo/11.2/debian/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/mariadb.list > /dev/null']);
+		}
+		if(mysql.checked) {
+			appendSource(['wget -q "https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_all.deb" -O mysql-apt-config_0.8.29-1_all.deb']);
+			appendSource(['sudo dpkg -i mysql-apt-config_0.8.29-1_all.deb']);
+			appendSource(['sudo apt-get update']);
+			appendSource(['sudo apt-get -yf install']);
+			appendSource(['rm -f mysql-apt-config_0.8.29-1_all.deb']);
+		}
 		
+		mariadb = document.querySelector('input[name=mariadb]'),
+		mysql = document.querySelector('input[name=mysql]'),	
 
 		
 		
