@@ -61,6 +61,7 @@
 		list.value = sourceList.join("\n");
 		sourceList = [];
 		list2.value = gpgList.join("\n");
+		gpgList = [];
 	};
 
 	button.addEventListener('click', generate, false);
