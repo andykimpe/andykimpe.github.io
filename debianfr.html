@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Sources List Generator for Debian</title>
+		<meta name="description" content="Sources List Generator for official Debian repositories">
+		<meta name="keywords" content="Debian, Server, Repository, Generator, Sources, Sources List, deb, deb-src, Linux, distro, distribution">
+		<meta name="robots" content="noodp,noydir">
+		<meta name="google-site-verification" content="M1qySTPCp0tj73JiCP1yjJKSwVwGIDoqCd8385lwdl0">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Code+Pro">
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<main>
+			<div class="wrap--header">
+				<div class="wrap">
+					<h2 class="header"><a href="https://andykimpe.github.io/debian.html" target="_blank">Debian Sources List Generator</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://andykimpe.github.io/ubuntu.html" target="_blank">Ubuntu Sources List Generator</a></h2>
+
+					<div class="fixed--right">							
+						<iframe src="https://ghbtns.com/github-btn.html?user=andykimpe&repo=andykimpe.github.io&type=fork&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+					</div>
+				</div>
+			</div>
+			<div class="wrap">
+				<div class="elemnts--inline">
+					<p><label>Mirror<br>
+					<select name="mirror">
+						<option value="http://deb.debian.org" selected>Debian Official Repo</option>
+						<option value="http://debian.mirrors.ovh.net">OVH CDN</option>
+						<option value="http://cdn-fastly.deb.debian.org">Fastest CDN</option>
+						<option value="http://ftp.at.debian.org">Austria</option>
+						<option value="http://ftp.au.debian.org">Australia</option>
+						<option value="http://ftp.be.debian.org">Belgium</option>
+						<option value="http://ftp.bg.debian.org">Bulgaria</option>
+						<option value="http://ftp.br.debian.org">Brazil</option>
+						<option value="http://ftp.by.debian.org">Belarus</option>
+						<option value="http://ftp.ca.debian.org">Canada</option>
+						<option value="http://ftp.ch.debian.org">Switzerland</option>
+						<option value="http://ftp.cn.debian.org">China</option>
+						<option value="http://ftp.cz.debian.org">Czech Republic</option>
+						<option value="http://ftp.de.debian.org">Germany</option>
+						<option value="http://ftp.dk.debian.org">Denmark</option>
+						<option value="http://ftp.ee.debian.org">Estonia</option>
+						<option value="http://ftp.es.debian.org">Spain</option>
+						<option value="http://ftp.fi.debian.org">Finland</option>
+						<option value="http://ftp.fr.debian.org">France</option>
+						<option value="http://ftp.fr.debian.org">France</option>
+						<option value="http://ftp.uk.debian.org">United Kingdom</option>
+						<option value="http://ftp.gr.debian.org">Greece</option>
+						<option value="http://ftp.hr.debian.org">Croatia</option>
+						<option value="http://ftp.hu.debian.org">Hungary</option>
+						<option value="http://ftp.ie.debian.org">Ireland</option>
+						<option value="http://ftp.is.debian.org">Iceland</option>
+						<option value="http://kambing.ui.ac.id">Indonesia (KambingUI Mirror)</option>
+						<option value="http://ftp.it.debian.org">Italy</option>
+						<option value="http://ftp.jp.debian.org">Japan</option>
+						<option value="http://ftp.kr.debian.org">Korea, Republic of</option>
+						<option value="http://ftp.lt.debian.org">Lithuania</option>
+						<option value="http://ftp.md.debian.org">Moldova</option>
+						<option value="http://ftp.mx.debian.org">Mexico</option>
+						<option value="http://ftp.nc.debian.org">New Caledonia</option>
+						<option value="http://ftp.nl.debian.org">Netherlands</option>
+						<option value="http://ftp.no.debian.org">Norway</option>
+						<option value="http://ftp.nz.debian.org">New Zealand</option>
+						<option value="http://ftp.pl.debian.org">Poland</option>
+						<option value="http://ftp.pt.debian.org">Portugal</option>
+						<option value="http://ftp.ro.debian.org">Romania</option>
+						<option value="http://ftp.ru.debian.org">Russian Federation</option>
+						<option value="http://ftp.se.debian.org">Sweden</option>
+						<option value="http://ftp.sg.debian.org">Singapore</option>
+						<option value="http://ftp.si.debian.org">Slovenia</option>
+						<option value="http://ftp.sk.debian.org">Slovakia</option>
+						<option value="http://ftp.sv.debian.org">El Salvador</option>
+						<option value="http://ftp.th.debian.org">Thailand</option>
+						<option value="http://ftp.tr.debian.org">Turkey</option>
+						<option value="http://ftp.tw.debian.org">Taiwan</option>
+						<option value="http://ftp.ua.debian.org">Ukraine</option>
+						<option value="http://ftp.us.debian.org">United States</option>
+					</select></label></p>
+
+					<p><label>Releases<br>
+					<select name="releases">
+						<option value="bookworm" data-updates selected>Debian 12 (Bookworm)</option>
+						<option value="bullseye" data-updates>Debian 11 (Bullseye)</option>
+					</select></label></p>
+
+					<p><label>Arch<br>
+					<select name="arch">
+						<option selected></option>
+						<option>all</option>
+						<option>amd64</option>
+						<option>arm64</option>
+						<option>armel</option>
+						<option>armhf</option>
+						<option>hurd-i386</option>
+						<option>i386</option>
+						<option>ia64</option>
+						<option>kfreebsd-amd64</option>
+						<option>kfreebsd-i386</option>
+						<option>mips</option>
+						<option>mipsel</option>
+						<option>powerpc</option>
+						<option>ppc64el</option>
+						<option>s390</option>
+						<option>s390x</option>
+						<option>sparc</option>
+					</select></label></p>
+				</div>
+
+				<p><label><input name="src" type="checkbox" checked> Include source</label><br>
+					<label><input name="contrib" type="checkbox" checked> Contrib</label><br>
+					<label><input name="non-free" type="checkbox" checked> Non-Free</label><br>
+					<label><input name="non-free-firmware" type="checkbox" checked> Non-Free-Firmware</label><br>
+					<label><input name="security" type="checkbox" checked> Security</label><br>
+					<label><input name="firefox" type="checkbox"> <a href="https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions" target="_blank">Mozilla Firefox</a></label></p>
+
+				<p><label>Source List<br>
+				<textarea autocomplete="off" autocorrect="off" autocapitalize="off" name="list" rows="25" cols="200"></textarea></label></p>
+				<p><button class="button">Generate</button></p>
+			</div>
+		</main>
+
+		<script src="debian.js"></script>
+	</body>
+</html>
