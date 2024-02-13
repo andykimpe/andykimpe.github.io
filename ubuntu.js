@@ -78,6 +78,7 @@
 
 		if(apache2.checked) {
 			appendSource(['sudo add-apt-repository ppa:ondrej/apache2 -y']);
+			if(src.checked) appendSource(['sudo add-apt-repository ppa:ondrej/apache2 -y -s']);
 			appendSource(['sudo apt update']);
 		}
 
