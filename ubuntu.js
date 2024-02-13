@@ -86,6 +86,12 @@
 			appendSource(['sudo add-apt-repository ppa:ondrej/php -y']);
 			if(src.checked) appendSource(['sudo add-apt-repository ppa:ondrej/php -y -s']);
 		}
+
+
+
+
+
+		
 		appendSource(['sudo apt update']);
 
 		list.value = sourceList.join("\n");
