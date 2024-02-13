@@ -5,9 +5,9 @@
 		releases = document.querySelector('select[name=releases]'),
 		list = document.querySelector('textarea[name=list]'),
 		src = document.querySelector('input[name=src]'),
-		contrib = document.querySelector('input[name=contrib]'),
-		nonfree = document.querySelector('input[name=non-free]'),
-		nonfreefirmware = document.querySelector('input[name=non-free-firmware]'),
+		restricted = document.querySelector('input[name=restricted]'),
+		universe = document.querySelector('input[name=universe]'),
+		multiverse = document.querySelector('input[name=multiverse]'),
 		firefox = document.querySelector('input[name=firefox]'),
 		security = document.querySelector('input[name=security]');
 
@@ -16,21 +16,12 @@
 	var getComponents = function() {
 		var components = ['main'];
 
-		if(contrib.checked) components.push('contrib');
-		if(nonfree.checked) components.push('non-free');
-		if(nonfreefirmware.checked) components.push('non-free-firmware');
+		if(restricted.checked) components.push('restricted');
+		if(universe.checked) components.push('universe');
+		if(multiverse.checked) components.push('multiverse');
 
 		return components.join(' ');
 	};
-
-        var getComponentss = function() {
-                var componentss = ['main'];
-
-                componentss.push('updates');
-                if(nonfree.checked) componentss.push('non-free');
-
-                return componentss.join(' ');
-        };
 
 	var getArch = function() {
 		var value = arch.options[arch.selectedIndex].value;
@@ -44,11 +35,9 @@
 	var generate = function() {
 		var ftp = mirror.options[mirror.selectedIndex].value,
 			rel = releases.options[releases.selectedIndex].value;
-                var ftpf = [ftp+'/debian/'];
-		var ftps = [ftp+'/debian-security/'];
+                var ftpf = [ftp+'/ubuntu/'];
 
 		var comps = getComponents();
-		var compss = getComponentss();
 		var arch = getArch();
 
 		appendSource(['sudo rm -f /etc/apt/sources.list']);
@@ -63,8 +52,8 @@
 
 		if(security.checked) {
 			//appendSource(['']);
-			appendSource(['echo "deb', arch, ftps, rel + '-security', compss+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
-			if(src.checked) appendSource(['echo "deb-src', arch, ftps, rel + '-security', compss+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+			appendSource(['echo "deb', arch, ftpf, rel + '-security', comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+			if(src.checked) appendSource(['echo "deb-src', arch, ftpf, rel + '-security', comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
 		}
 
 		appendSource(['sudo apt-get update']);
