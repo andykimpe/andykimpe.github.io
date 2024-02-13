@@ -8,7 +8,7 @@
 		contrib = document.querySelector('input[name=contrib]'),
 		nonfree = document.querySelector('input[name=non-free]'),
 		nonfreefirmware = document.querySelector('input[name=non-free-firmware]'),
-		firefox = document.querySelector('input[firefox]'),
+		firefox = document.querySelector('input[name=firefox]'),
 		security = document.querySelector('input[name=security]');
 
 	var sourceList = [];
