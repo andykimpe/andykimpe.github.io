@@ -4,6 +4,7 @@
 		arch = document.querySelector('select[name=arch]'),
 		releases = document.querySelector('select[name=releases]'),
 		list = document.querySelector('textarea[name=list]'),
+		list2 = document.querySelector('textarea[name=list2]'),
 		src = document.querySelector('input[name=src]'),
 		contrib = document.querySelector('input[name=contrib]'),
 		nonfree = document.querySelector('input[name=non-free]'),
@@ -30,6 +31,9 @@
 	var appendSource = function(source) {
 		sourceList.push(source.filter(function(element) { return element.length; }).join(' '));
 	};
+	var appendGpf = function(source) {
+		gpgList.push(source.filter(function(element) { return element.length; }).join(' '));
+	};
 
 	var generate = function() {
 		var ftp = mirror.options[mirror.selectedIndex].value,
@@ -52,9 +56,11 @@
 			appendSource(['deb', arch, 'http://security.debian.org/', rel + '/updates', comps]);
 			if(src.checked) appendSource(['deb-src', arch, 'http://security.debian.org/', rel + '/updates', comps]);
 		}
+		appendGpf(['gpg', 'gpg1', 'gpg2', 'gpg3', 'gpg4']);
 
 		list.value = sourceList.join("\n");
 		sourceList = [];
+		list2.value = gpgList.join("\n");
 	};
 
 	button.addEventListener('click', generate, false);
