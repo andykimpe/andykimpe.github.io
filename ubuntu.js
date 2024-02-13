@@ -5,9 +5,10 @@
 		releases = document.querySelector('select[name=releases]'),
 		list = document.querySelector('textarea[name=list]'),
 		src = document.querySelector('input[name=src]'),
-		restricted = document.querySelector('input[name=restricted'),
-		universe = document.querySelector('input[name=universe'),
-		multiverse = document.querySelector('input[name=multiverse'),
+		contrib = document.querySelector('input[name=contrib]'),
+		nonfree = document.querySelector('input[name=non-free]'),
+		nonfreefirmware = document.querySelector('input[name=non-free-firmware]'),
+		firefox = document.querySelector('input[name=firefox]'),
 		security = document.querySelector('input[name=security]');
 
 	var sourceList = [];
@@ -15,12 +16,21 @@
 	var getComponents = function() {
 		var components = ['main'];
 
-		if(restricted.checked) components.push('restricted');
-		if(multiverse.checked) components.push('universe');
-		if(multiverse.checked) components.push('multiverse');
+		if(contrib.checked) components.push('contrib');
+		if(nonfree.checked) components.push('non-free');
+		if(nonfreefirmware.checked) components.push('non-free-firmware');
 
 		return components.join(' ');
 	};
+
+        var getComponentss = function() {
+                var componentss = ['main'];
+
+                componentss.push('updates');
+                if(nonfree.checked) componentss.push('non-free');
+
+                return componentss.join(' ');
+        };
 
 	var getArch = function() {
 		var value = arch.options[arch.selectedIndex].value;
@@ -34,23 +44,44 @@
 	var generate = function() {
 		var ftp = mirror.options[mirror.selectedIndex].value,
 			rel = releases.options[releases.selectedIndex].value;
+                var ftpf = [ftp+'/debian/'];
+		var ftps = [ftp+'/debian-security/'];
 
 		var comps = getComponents();
+		var compss = getComponentss();
 		var arch = getArch();
 
-		appendSource(['deb', arch, ftp, rel, comps]);
-		if(src.checked) appendSource(['deb-src', arch, ftp, rel, comps]);
+		appendSource(['sudo rm -f /etc/apt/sources.list']);
+		appendSource(['echo "deb', arch, ftpf, rel, comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+		if(src.checked) appendSource(['echo "deb-src', arch, ftpf, rel, comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
 
 		if(releases.options[releases.selectedIndex].hasAttribute('data-updates')) {
-			appendSource(['']);
-			appendSource(['deb', arch, ftp, rel + '-updates', comps]);
-			if(src.checked) appendSource(['deb-src', arch, ftp, rel + '-updates', comps]);
+			//appendSource(['']);
+			appendSource(['echo "deb', arch, ftpf, rel + '-updates', comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+			if(src.checked) appendSource(['echo "deb-src', arch, ftpf, rel + '-updates', comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
 		}
 
 		if(security.checked) {
-			appendSource(['']);
-			appendSource(['deb', arch, 'http://security.debian.org/', rel + '/updates', comps]);
-			if(src.checked) appendSource(['deb-src', arch, 'http://security.debian.org/', rel + '/updates', comps]);
+			//appendSource(['']);
+			appendSource(['echo "deb', arch, ftps, rel + '-security', compss+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+			if(src.checked) appendSource(['echo "deb-src', arch, ftps, rel + '-security', compss+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+		}
+
+		appendSource(['sudo apt-get update']);
+		appendSource(['sudo apt-get install curl wget apt-transport-https dirmngr -y']);
+
+		if(firefox.checked) {
+			appendSource(['mkdir -p ~/.mozilla/firefox/ && cp -a ~/snap/firefox/common/.mozilla/firefox/* ~/.mozilla/firefox/']);
+			appendSource(['sudo snap remove firefox']);
+			appendSource(['sudo apt-get -y purge firefox']);
+			appendSource(['sudo install -d -m 0755 /etc/apt/keyrings']);
+			appendSource(['wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null']);
+			appendSource(['echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc]', arch, 'https://packages.mozilla.org/apt', 'mozilla', 'main', '" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null']);
+			appendSource(['echo "']);
+			appendSource(['Package: *']);
+			appendSource(['Pin: origin packages.mozilla.org']);
+			appendSource(['Pin-Priority: 1000']);
+			appendSource(['" | sudo tee /etc/apt/preferences.d/mozilla']);
 		}
 
 		list.value = sourceList.join("\n");
