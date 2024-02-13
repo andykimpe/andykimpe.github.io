@@ -60,7 +60,7 @@
 		}
 
 		appendSource(['sudo apt-get update']);
-		appendSource(['sudo apt-get install curl wget apt-transport-https dirmngr ca-certificates software-properties-common -y']);
+		appendSource(['sudo apt-get install curl wget apt-transport-https dirmngr gnupg2 ca-certificates lsb-release ubuntu-keyring software-properties-common -y']);
 			appendSource(['sudo install -d -m 0755 /etc/apt/keyrings']);
 
 		if(firefox.checked) {
