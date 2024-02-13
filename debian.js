@@ -43,13 +43,13 @@
 		if(src.checked) appendSource(['echo "deb-src', arch, ftp, rel, comps, '" | sudo tee -a /etc/apt/sources.list']);
 
 		if(releases.options[releases.selectedIndex].hasAttribute('data-updates')) {
-			appendSource(['']);
+			//appendSource(['']);
 			appendSource(['echo "deb', arch, ftp, rel + '-updates', comps, '" | sudo tee -a /etc/apt/sources.list']);
 			if(src.checked) appendSource(['echo "deb-src', arch, ftp, rel + '-updates', comps, '" | sudo tee -a /etc/apt/sources.list']);
 		}
 
 		if(security.checked) {
-			appendSource(['']);
+			//appendSource(['']);
 			appendSource(['echo "deb', arch, 'http://security.debian.org/', rel + '-security', comps, '" | sudo tee -a /etc/apt/sources.list']);
 			if(src.checked) appendSource(['echo "deb-src', arch, 'http://security.debian.org/', rel + '-security', comps, '" | sudo tee -a /etc/apt/sources.list']);
 		}
