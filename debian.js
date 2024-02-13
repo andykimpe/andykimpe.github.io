@@ -59,9 +59,17 @@
 		appendSource(['sudo apt-get install curl wget apt-transport-https dirmngr -y']);
 
 		if(firefox.checked) {
+			appendSource(['mkdir -p ~/.mozilla/firefox/ && cp -a ~/snap/firefox/common/.mozilla/firefox/* ~/.mozilla/firefox/']);
+			appendSource(['sudo snap remove firefox']);
+			appendSource(['sudo apt-get -y purge firefox']);
 			appendSource(['sudo install -d -m 0755 /etc/apt/keyrings']);
-		//	appendSource(['wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null']);
-		//	appendSource(['echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc]', arch, 'https://packages.mozilla.org/apt', 'mozilla', 'main', '" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null']);
+			appendSource(['wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null']);
+			appendSource(['echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc]', arch, 'https://packages.mozilla.org/apt', 'mozilla', 'main', '" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null']);
+			appendSource(['echo "']);
+			appendSource(['Package: *']);
+			appendSource(['Pin: origin packages.mozilla.org']);
+			appendSource(['Pin-Priority: 1000']);
+			appendSource(['" | sudo tee /etc/apt/preferences.d/mozilla']);
 		}
 
 		list.value = sourceList.join("\n");
