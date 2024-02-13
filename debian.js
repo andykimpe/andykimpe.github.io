@@ -71,7 +71,7 @@
 		}
 
 		appendSource(['sudo apt-get update']);
-		appendSource(['sudo apt-get install curl wget apt-transport-https dirmngr ca-certificates -y']);
+		appendSource(['sudo apt-get install curl wget apt-transport-https dirmngr gnupg2 ca-certificates lsb-release debian-archive-keyring -y']);
 			appendSource(['sudo install -d -m 0755 /etc/apt/keyrings']);
 
 		if(firefox.checked) {
