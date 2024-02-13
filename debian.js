@@ -53,6 +53,7 @@
 		var arch = getArch();
 
 		appendSource(['sudo rm -f /etc/apt/sources.list']);
+		appendSource(['sudo rm -f /etc/apt/sources.list.d/*.list']);
 		appendSource(['echo "deb', arch, ftpf, rel, comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
 		if(src.checked) appendSource(['echo "deb-src', arch, ftpf, rel, comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
 
@@ -91,6 +92,7 @@
 			appendSource(['sudo install -d -m 0755 /etc/apt/keyrings']);
 			appendSource(['wget -q https://packages.sury.org/apache2/apt.gpg -O- | sudo tee /etc/apt/keyrings/apache2.asc > /dev/null']);
 			appendSource(['echo "deb [signed-by=/etc/apt/keyrings/apache2.asc]', arch, 'https://packages.mozilla.org/apt', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/apache2.list > /dev/null']);
+			if(src.checked) appendSource(['echo "deb-src [signed-by=/etc/apt/keyrings/apache2.asc]', arch, 'https://packages.mozilla.org/apt', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/apache2.list > /dev/null']);
 			appendSource(['sudo apt update']);
 		}
 
