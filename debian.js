@@ -23,6 +23,15 @@
 		return components.join(' ');
 	};
 
+        var getComponentss = function() {
+                var componentss = ['main'];
+
+                componentss.push('updates');
+                if(nonfree.checked) componentss.push('non-free');
+
+                return componentss.join(' ');
+        };
+
 	var getArch = function() {
 		var value = arch.options[arch.selectedIndex].value;
 		return value ? '[arch=' + value + ']' : '';
@@ -35,26 +44,27 @@
 	var generate = function() {
 		var ftp = mirror.options[mirror.selectedIndex].value,
 			rel = releases.options[releases.selectedIndex].value;
-		var ftpf = [ftp+'/debian/'];
-                var ftps = [ftp+'/debian-security/'];
+                var ftpf = [ftp+'/debian/'];
+		var ftps = [ftp+'/debian-security/'];
 
 		var comps = getComponents();
+		var compss = getComponentss();
 		var arch = getArch();
 
 		appendSource(['sudo rm -f /etc/apt/sources.list']);
-		appendSource(['echo "deb', arch, ftpf, rel, comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
-		if(src.checked) appendSource(['echo "deb-src', arch, ftpf, rel, comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+		appendSource(['echo "deb', arch, ftpf, rel, comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+		if(src.checked) appendSource(['echo "deb-src', arch, ftpf, rel, comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
 
 		if(releases.options[releases.selectedIndex].hasAttribute('data-updates')) {
 			//appendSource(['']);
-			appendSource(['echo "deb', arch, ftpf, rel + '-updates', comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
-			if(src.checked) appendSource(['echo "deb-src', arch, ftpf, rel + '-updates', comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+			appendSource(['echo "deb', arch, ftpf, rel + '-updates', comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+			if(src.checked) appendSource(['echo "deb-src', arch, ftpf, rel + '-updates', comps+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
 		}
 
 		if(security.checked) {
 			//appendSource(['']);
-			appendSource(['echo "deb', arch, ftps, rel + '-security', comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
-			if(src.checked) appendSource(['echo "deb-src', arch, ftps, rel + '-security', comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+			appendSource(['echo "deb', arch, ftps, rel + '-security', compss+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+			if(src.checked) appendSource(['echo "deb-src', arch, ftps, rel + '-security', compss+'" | sudo tee -a /etc/apt/sources.list > /dev/null']);
 		}
 
 		appendSource(['sudo apt-get update']);
@@ -81,6 +91,3 @@
 	button.addEventListener('click', generate, false);
 	generate();
 })();
-
-
-
