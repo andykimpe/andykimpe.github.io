@@ -103,7 +103,7 @@
 		if(nginx.checked) {
 			appendSource(['wget -q https://nginx.org/keys/nginx_signing.key -O- | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg > /dev/null']);
 			appendSource(['echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg]', arch, 'http://nginx.org/packages/debian/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/nginx.list > /dev/null']);
-			if(src.checked) appendSource(['echo "deb-src [signed-by=/etc/apt/keyrings/php.asc]', arch, 'http://nginx.org/packages/debian/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/nginx.list > /dev/null']);
+			if(src.checked) appendSource(['echo "deb-src [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg]', arch, 'http://nginx.org/packages/debian/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/nginx.list > /dev/null']);
 		}
 		
 
