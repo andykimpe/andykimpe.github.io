@@ -31,13 +31,13 @@
 		function brokenRepo(id) {
 			if (confirm("Would you like to report this repo as broken?")) {
 				if (confirm("Is the key broken?")) {
-					$.post("api.php?brokenRepo", {
+					$.post("api.html?brokenRepo", {
 						id: id,
 						key: "1"
 					});
 					alert("Thank you! We will fix the problem as soon as possible!");
 				} else {
-					$.post("api.php?brokenRepo", {
+					$.post("api.html?brokenRepo", {
 						id: id,
 						key: "0"
 					});
@@ -74,7 +74,7 @@
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/beli3ver/debgen/subscription" data-count-href="/beli3ver/debgen/watchers" data-count-api="/repos/beli3ver/debgen#subscribers_count" data-count-aria-label="# watchers on GitHub" aria-label="Watch beli3ver/debgen on GitHub">Watch</a>
 
-    <form action="index.php?generate" method="post" name="generate">
+    <form action="index.html?generate" method="post" name="generate">
 		<div style="border:1px solid #cecece;background-color:#efefef;text-align:center;">
 			<h4>Debian Fast Server Select</h4>
 			Do you want Debian to automatically choose the fastest download server? Then simply leave this box selected.<br />
@@ -144,7 +144,7 @@
 							$('#backports').prop('checked', true);						
 						}
 						$(".button").prop('disabled', false);
-						$.getJSON("api.php?get_repos&release_id="+$("#release").find(":selected").data('id'), function(result){
+						$.getJSON("api.html?get_repos&release_id="+$("#release").find(":selected").data('id'), function(result){
 							$(".repos").empty();
 							$.each(result, function(k, v){
 								$( ".repos" ).append('<div class="repo"></div><p><label><input name="3rdparties[]" type="checkbox" value="'+v.repo_id+'"> '+v.repo_name+'</label>&nbsp;&nbsp;<a href="'+v.repo_homepage+'" target="_blank"  class="link"><i class="icon ion-earth"> Homepage</i></a>&nbsp;&nbsp;<a href="'+v.repo_documentation+'"  target="_blank" class="link"><i class="icon ion-university"> Documentation</i></a>');
