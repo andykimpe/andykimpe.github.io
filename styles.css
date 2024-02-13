@@ -18,8 +18,8 @@ main {
 	background: #fff;
 }
 .wrap {
-	width: 90%;
-	max-width: 60rem;
+	width: 100%;
+	max-width: 100rem;
 	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
@@ -42,7 +42,7 @@ main {
 
 .header {
 	color: #005F6B;
-	font-weight: 400;
+	font-weight: 800;
 }
 
 select {
@@ -78,3 +78,4 @@ button {
 	cursor: pointer;
 	border-radius: 3px;
 }
+
