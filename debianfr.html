@@ -4,8 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Sources List Generator for Debian</title>
-		<meta name="description" content="Sources List Generator for official Debian repositories">
+		<title>Générateur Sources List pour Debian</title>
+		<meta name="description" content="Générateur Sources List pour Debian repositories">
 		<meta name="keywords" content="Debian, Server, Repository, Generator, Sources, Sources List, deb, deb-src, Linux, distro, distribution">
 		<meta name="robots" content="noodp,noydir">
 		<meta name="google-site-verification" content="M1qySTPCp0tj73JiCP1yjJKSwVwGIDoqCd8385lwdl0">
@@ -16,7 +16,7 @@
 		<main>
 			<div class="wrap--header">
 				<div class="wrap">
-					<h2 class="header"><a href="/debianfr.html">Debian Sources List Generator</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/ubuntufr.html">Ubuntu Sources List Generator</a></h2>
+					<h2 class="header"><a href="/debianfr.html">Générateur Sources List Debian</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/ubuntufr.html">Générateur Sources List Ubuntu</a></h2>
 
 					<div class="fixed--right">	
 						 <a href="/debianfr.html"><img src="/img/france-75-75-75.png" alt="français"/></a>&nbsp;&nbsp;&nbsp;
@@ -27,7 +27,7 @@
 			</div>
 			<div class="wrap">
 				<div class="elemnts--inline">
-					<p><label>Mirror<br>
+					<p><label>Mirroir<br>
 					<select name="mirror">
 						<option value="http://deb.debian.org" selected>Debian Official Repo</option>
 						<option value="http://debian.mirrors.ovh.net">OVH CDN</option>
@@ -82,13 +82,13 @@
 						<option value="http://ftp.us.debian.org">United States</option>
 					</select></label></p>
 
-					<p><label>Releases<br>
+					<p><label>Distribution<br>
 					<select name="releases">
 						<option value="bookworm" data-updates selected>Debian 12 (Bookworm)</option>
 						<option value="bullseye" data-updates>Debian 11 (Bullseye)</option>
 					</select></label></p>
 
-					<p><label>Arch<br>
+					<p><label>Architecteure<br>
 					<select name="arch">
 						<option selected></option>
 						<option>all</option>
@@ -111,14 +111,14 @@
 					</select></label></p>
 				</div>
 
-				<p><label><input name="src" type="checkbox" checked> Include source</label><br>
+				<p><label><input name="src" type="checkbox" checked> Inclure source</label><br>
 					<label><input name="contrib" type="checkbox" checked> Contrib</label><br>
 					<label><input name="non-free" type="checkbox" checked> Non-Free</label><br>
 					<label><input name="non-free-firmware" type="checkbox" checked> Non-Free-Firmware</label><br>
 					<label><input name="security" type="checkbox" checked> Security</label><br>
 					<label><input name="firefox" type="checkbox"> <a href="https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions" target="_blank">Mozilla Firefox</a></label></p>
 
-				<p><label>Source List<br>
+				<p><label>Commande a executer<br>
 				<textarea autocomplete="off" autocorrect="off" autocapitalize="off" name="list" rows="25" cols="200"></textarea></label></p>
 				<p><button class="button">Generate</button></p>
 			</div>
