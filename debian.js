@@ -77,7 +77,7 @@
 			appendSource(['sudo apt-get -y purge firefox']);
 			appendSource(['sudo install -d -m 0755 /etc/apt/keyrings']);
 			appendSource(['wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null']);
-			appendSource(['echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc]', arch, 'https://packages.mozilla.org/apt', 'mozilla', 'main', '" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null']);
+			appendSource(['echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc]', arch, 'https://packages.mozilla.org/apt', 'mozilla', 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null']);
 			appendSource(['echo "']);
 			appendSource(['Package: *']);
 			appendSource(['Pin: origin packages.mozilla.org']);
@@ -90,7 +90,7 @@
 		if(apache2.checked) {
 			appendSource(['sudo install -d -m 0755 /etc/apt/keyrings']);
 			appendSource(['wget -q https://packages.sury.org/apache2/apt.gpg -O- | sudo tee /etc/apt/keyrings/apache2.asc > /dev/null']);
-			appendSource(['echo "deb [signed-by=/etc/apt/keyrings/apache2.asc]', arch, 'https://packages.mozilla.org/apt', rel, 'main', '" | sudo tee -a /etc/apt/sources.list.d/apache2.list > /dev/null']);
+			appendSource(['echo "deb [signed-by=/etc/apt/keyrings/apache2.asc]', arch, 'https://packages.mozilla.org/apt', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/apache2.list > /dev/null']);
 			appendSource(['sudo apt update']);
 		}
 
