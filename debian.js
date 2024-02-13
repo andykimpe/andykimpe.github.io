@@ -11,6 +11,7 @@
 		firefox = document.querySelector('input[name=firefox]'),
 		apache2 = document.querySelector('input[name=apache2]'),
 		php = document.querySelector('input[name=php]'),
+		nginx = document.querySelector('input[name=nginx]'),
 		security = document.querySelector('input[name=security]');
 
 	var sourceList = [];
@@ -99,6 +100,12 @@
 			appendSource(['echo "deb [signed-by=/etc/apt/keyrings/php.asc]', arch, 'https://packages.sury.org/php/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/php.list > /dev/null']);
 			if(src.checked) appendSource(['echo "deb-src [signed-by=/etc/apt/keyrings/php.asc]', arch, 'https://packages.sury.org/php/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/php.list > /dev/null']);
 		}
+		if(nginx.checked) {
+			appendSource(['wget -q https://nginx.org/keys/nginx_signing.key -O- | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg > /dev/null']);
+			appendSource(['echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg]', arch, 'http://nginx.org/packages/debian/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/nginx.list > /dev/null']);
+			if(src.checked) appendSource(['echo "deb-src [signed-by=/etc/apt/keyrings/php.asc]', arch, 'http://nginx.org/packages/debian/', rel, 'main'+ '" | sudo tee -a /etc/apt/sources.list.d/nginx.list > /dev/null']);
+		}
+		
 
 		
 		
