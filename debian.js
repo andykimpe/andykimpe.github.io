@@ -35,24 +35,26 @@
 	var generate = function() {
 		var ftp = mirror.options[mirror.selectedIndex].value,
 			rel = releases.options[releases.selectedIndex].value;
+		var ftpf = [ftp+'/debian/'];
+                var ftps = [ftp+'/debian-security/'];
 
 		var comps = getComponents();
 		var arch = getArch();
 
 		appendSource(['sudo rm -f /etc/apt/sources.list']);
-		appendSource(['echo "deb', arch, ftp'/debian/', rel, comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
-		if(src.checked) appendSource(['echo "deb-src', arch, ftp, rel, comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+		appendSource(['echo "deb', arch, ftpf, rel, comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+		if(src.checked) appendSource(['echo "deb-src', arch, ftpf, rel, comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
 
 		if(releases.options[releases.selectedIndex].hasAttribute('data-updates')) {
 			//appendSource(['']);
-			appendSource(['echo "deb', arch, ftp'/debian/', rel + '-updates', comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
-			if(src.checked) appendSource(['echo "deb-src', arch, ftp, rel + '-updates', comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+			appendSource(['echo "deb', arch, ftpf, rel + '-updates', comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+			if(src.checked) appendSource(['echo "deb-src', arch, ftpf, rel + '-updates', comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
 		}
 
 		if(security.checked) {
 			//appendSource(['']);
-			appendSource(['echo "deb', arch, 'http://security.debian.org/debian-security/', rel + '-security', comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
-			if(src.checked) appendSource(['echo "deb-src', arch, 'http://security.debian.org/debian-security/', rel + '-security', comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+			appendSource(['echo "deb', arch, ftps, rel + '-security', comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
+			if(src.checked) appendSource(['echo "deb-src', arch, ftps, rel + '-security', comps, '" | sudo tee -a /etc/apt/sources.list > /dev/null']);
 		}
 
 		appendSource(['sudo apt-get update']);
