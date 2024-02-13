@@ -54,6 +54,10 @@
 			if(src.checked) appendSource(['echo "deb-src', arch, 'http://security.debian.org/', rel + '-security', comps, '" | sudo tee -a /etc/apt/sources.list']);
 		}
 
+		appendSource(['sudo apt-get update']);
+		appendSource(['sudo apt-get install curl wget apt-transport-https dirmngr -y']);
+		
+
 		list.value = sourceList.join("\n");
 		sourceList = [];
 	};
